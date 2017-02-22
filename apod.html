@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//fb snippet
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1321362891254036',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+//my funcs
+function myFacebookLogin() {
+  FB.login(function(){}, {scope: 'publish_actions'});
+}
+
+FB.login(function(){
+  // Note: The call will only work if you accept the permission request
+  FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+}, {scope: 'publish_actions'});
+
+</script>
+</head>
+<body>
+<button onclick="myFacebookLogin()">Login with Facebook</button>
+This is a test.
+</body>
