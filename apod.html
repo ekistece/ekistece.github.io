@@ -25,9 +25,6 @@ This is a test
 
 //my funcs
 function myFacebookLogin() {
-  FB.login(function(){}, {scope: 'publish_actions'});
-};
-
 FB.login(function(){
   // Note: The call will only work if you accept the permission request
   FB.api('/me/feed', 'post', {message: 'Hello, world!'});
