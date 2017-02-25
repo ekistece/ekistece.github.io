@@ -2,7 +2,7 @@ var url = "http://127.0.0.1:3000";
 var request = new XMLHttpRequest();
 request.open('GET', url);
 request.responseType = 'json';
-request.send()
+request.send();
 if (request.status == 200) {
 	request.onload = function() {
 		var json = request.response;
