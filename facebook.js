@@ -62,7 +62,7 @@ function postToPage() {
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
     FB.api('/me/feed', 'post', {message: msg});
-    alert("Posted!');
+    alert('Posted!');
 }
 
 window.fbAsyncInit = function() {
