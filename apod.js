@@ -10,7 +10,7 @@ if (request.status == 200) {
 		document.getElementById('previewInfo').textContent = json['info'];
 		document.getElementById('previewImg').src = json['img'];
 		document.getElementById('previewBody').textContent = json['body'];
-	}
+	};
 }
 else {
 	document.getElementById('previewTitle').textContent = "Couldn't connect to server...";
