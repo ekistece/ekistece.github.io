@@ -39,9 +39,7 @@ function userLoggedOut() {
 }
 
 function loginWithButton() {
-  FB.login(function(){
-  // Note: The call will only work if you accept the permission request
-  checkLoginState();
+  FB.login(checkLoginState(), {scope: 'publish_actions'});
 }
 
 window.fbAsyncInit = function() {
