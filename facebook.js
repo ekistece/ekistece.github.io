@@ -55,6 +55,16 @@ function loginWithButton() {
       }} , {scope: 'publish_actions'});
 }
 
+function postToPage() {
+    var title = document.getElementById('previewTitle').textContent;
+    var info = document.getElementById('previewInfo').textContent;
+    var body = document.getElementById('previewBody').textContent
+    var img = document.getElementById('previewImg').src;
+    var msg = title + '\n' + info + '\n' + body + '\n' + img;
+    FB.api('/217683191960504/feed', 'post', {message: msg});
+    alert("Posted to facebook!");
+}
+
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1321362891254036',
