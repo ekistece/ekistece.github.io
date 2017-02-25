@@ -42,6 +42,7 @@ function userLoggedOut() {
 
 function logoutWithButton() {
   FB.logout(function(response) {
+      checkLoginState();
       console.log(response);
   });
 }
