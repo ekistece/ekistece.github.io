@@ -47,6 +47,7 @@ function logoutWithButton() {
 function loginWithButton() {
   FB.login(function(response) {
       if (response.authResponse) {
+        console.log("button clicked");
         checkLoginState();
       }} , {scope: 'publish_actions'});
 }
