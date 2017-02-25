@@ -50,9 +50,8 @@ function logoutWithButton() {
 function loginWithButton() {
   FB.login(function(response) {
       if (response.authResponse) {
-        console.log("button clicked");
         checkLoginState();
-      }} , {scope: 'publish_actions'});
+      }} , {scope: 'publish_actions,manage_pages'});
 }
 
 function postToPage() {
@@ -61,7 +60,7 @@ function postToPage() {
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/me/feed', 'post', {message: msg});
+    FB.api('/217683191960504/feed', 'post', {message: msg});
     alert('Posted!');
 }
 
