@@ -52,7 +52,7 @@ function loginWithButton() {
       if (response.authResponse) {
         console.log("button clicked");
         checkLoginState();
-      }} , {scope: 'publish_actions'});
+      }} , {scope: 'publish_pages'});
 }
 
 function postToPage() {
