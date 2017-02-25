@@ -51,7 +51,7 @@ function loginWithButton() {
   FB.login(function(response) {
       if (response.authResponse) {
         checkLoginState();
-      }} , {scope: 'publish_actions,manage_pages'});
+      }} , {scope: 'publish_actions,manage_pages,publish_pages'});
 }
 
 function postToPage() {
