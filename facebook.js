@@ -52,7 +52,7 @@ function loginWithButton() {
       if (response.authResponse) {
         console.log("button clicked");
         checkLoginState();
-      }} , {scope: 'publish_pages'});
+      }} , {scope: 'publish_actions'});
 }
 
 function postToPage() {
@@ -61,8 +61,8 @@ function postToPage() {
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/217683191960504/feed', 'post', {message: msg});
-    alert(msg);
+    FB.api('/me/feed', 'post', {message: msg});
+    alert("Posted!');
 }
 
 window.fbAsyncInit = function() {
