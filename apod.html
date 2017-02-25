@@ -25,21 +25,23 @@
         line-height: 50px;
         height: 50px;
       }
-
+	  
+	  #buttons_navbar {
+		height: 70px;
+		text-align: center;
+		}
+	  
+	  #button_div {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		height:100%;
+		line-height : 100%;
+		vertical-align:center;
+		}
+	  
       #loginButton {
         margin-right: 10px;
-      }
-	  
-	  #publish_nav {
-			text-align: center;
-			width: 100%;
-	  }
-
-      #buttons_navbar {
-		//display: none;
-        width: 100%;
-        line-height: 70px;
-        height: 70px;
+		margin-left: 10px;
       }
     </style>
 
@@ -85,16 +87,11 @@
     </div>
     <div class="container">
     <nav id="buttons_navbar" class="navbar navbar-fixed-bottom navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-collapse collapse">
-          <ul id="publish_nav" class="nav navbar-nav">
-            <button id="publish_button" type="button" class="btn btn-primary btn-lg">Publicar</button>
-          </div>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    </div>
+		<div id="button_div">
+			<button id="publish_button" type="button" class="btn btn-primary btn-lg text-center">Publicar</button>
+		</div>
+	</nav>
+	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
