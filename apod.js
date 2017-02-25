@@ -1,4 +1,4 @@
-var url = "http://192.168.1.35:3000";
+var url = "http://127.0.0.1:3000";
 var request = new XMLHttpRequest();
 request.open('GET', url);
 request.responseType = 'json';
