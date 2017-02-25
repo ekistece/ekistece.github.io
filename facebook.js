@@ -35,7 +35,7 @@ function userLoggedIn() {
 function userLoggedOut() {
    btn = document.getElementById("loginButton");
    btn.className = btn.className.replace("btn-danger", "btn-success");
-   document.getElementById("buttons_navbar").style.display = "hide";
+   document.getElementById("buttons_navbar").style.display = "none";
    btn.textContent = "Log In";
    btn.onClick = "logintWithButton()";
 }
