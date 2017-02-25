@@ -45,7 +45,10 @@ function logoutWithButton() {
 }
 
 function loginWithButton() {
-  FB.login(checkLoginState(), {scope: 'publish_actions'});
+  FB.login(function(response) {
+      if (response.authResponse) {
+        checkLoginState();
+      }} , {scope: 'publish_actions'});
 }
 
 window.fbAsyncInit = function() {
