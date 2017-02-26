@@ -1,3 +1,5 @@
+var page_access_token;
+
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
@@ -24,6 +26,8 @@ function userLoggedIn() {
   document.getElementById("buttons_navbar").style.display = "block";
   btn.textContent = "Log out";
   btn.setAttribute("onclick", "logoutWithButton()")
+  page_access_token = getPageAccessToken('TestPage');
+  console.log(page_access_token)
 }
 
 function userLoggedOut() {
@@ -48,19 +52,34 @@ function loginWithButton() {
       }} , {scope: 'publish_actions,manage_pages,publish_pages'});
 }
 
-function postToPage() {
+function postToPage(page_access_token) {
     var title = document.getElementById('previewTitle').textContent;
     var info = document.getElementById('previewInfo').textContent;
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/217683191960504/feed', 'post', {'message': msg}, function(response) {
+    FB.api('/217683191960504/feed', 'post', {'access_token': page_access_token, 'message': msg}, function(response) {
         if (response && !response.error) {
             alert("Post succesful!");
         }
         else
         {
             alert(response[error][message]);
+        }
+    });
+}
+
+function getPageAccessToken(pageName) {
+    FB.api('/me/accounts', function(response) {
+        for each (var page in response.data) {
+            if (page.name == pageName) {
+                console.log(page.access_token);
+                return page.access_token;
+            }
+            else
+            {
+                return null;
+            }
         }
     });
 }
