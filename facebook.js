@@ -31,7 +31,7 @@ function userLoggedIn() {
   btn.setAttribute("onclick", "logoutWithButton()");
   getPageAccessToken(myPage.id, function(token) {
       myPage.access_token = token;
-      console.log(page_access_token);
+      console.log(myPage.access_token);
   }); 
 }
 
@@ -57,7 +57,7 @@ function loginWithButton() {
       }} , {scope: 'publish_actions,manage_pages,publish_pages'});
 }
 
-function postToPage(page_access_token) {
+function postToPage() {
     var title = document.getElementById('previewTitle').textContent;
     var info = document.getElementById('previewInfo').textContent;
     var body = document.getElementById('previewBody').textContent
