@@ -26,8 +26,10 @@ function userLoggedIn() {
   document.getElementById("buttons_navbar").style.display = "block";
   btn.textContent = "Log out";
   btn.setAttribute("onclick", "logoutWithButton()");
-  page_access_token = getPageAccessToken('TestPage');
-  console.log(page_access_token);
+  getPageAccessToken('TestPage', function(token) {
+      page_access_token = token;
+      console.log(page_access_token);
+  }); 
 }
 
 function userLoggedOut() {
@@ -69,16 +71,16 @@ function postToPage(page_access_token) {
     });
 }
 
-function getPageAccessToken(pageName) {
+function getPageAccessToken(pageName, callback) {
     FB.api('/me/accounts', function(response) {
         for (var i=0; i < response.data.length; i++) {
             if (response.data[i].name == pageName) {
                 console.log(response.data[i].access_token);
-                return response.data[i].access_token;
+                callback(response.data[i].access_token);
             }
             else
             {
-                return null;
+                callback(null);
             }
         }
     });
