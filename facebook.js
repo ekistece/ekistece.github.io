@@ -1,4 +1,4 @@
-var myPage {
+var myPage = {
     id: '217683191960504',
     access_token,
 };
