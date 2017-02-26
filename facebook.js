@@ -60,7 +60,7 @@ function postToPage() {
         }
         else
         {
-            alert('Error: ' + response.error);
+            alert(response);
         }
     });
 }
