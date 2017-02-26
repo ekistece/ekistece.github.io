@@ -71,10 +71,10 @@ function postToPage(page_access_token) {
 
 function getPageAccessToken(pageName) {
     FB.api('/me/accounts', function(response) {
-        for each (var page in response.data) {
-            if (page.name == pageName) {
-                console.log(page.access_token);
-                return page.access_token;
+        for (var i=0; i < response.data.length; i++) {
+            if (response.data[i].name == pageName) {
+                console.log(response.data[i].access_token);
+                return response.data[i].access_token;
             }
             else
             {
