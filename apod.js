@@ -6,6 +6,7 @@ request.onload = function() {
 	if (request.status == 200) {
 		var json = request.response;
 		document.getElementById('previewTitle').textContent = json['title'];
+		document.getElementById('previewUrl').textContent = json['url'];
 		document.getElementById('previewInfo').textContent = json['info'];
 		document.getElementById('previewImg').src = json['img'];
 		document.getElementById('previewBody').textContent = json['body'];
