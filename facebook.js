@@ -63,7 +63,7 @@ function postToPage() {
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/217683191960504/feed', 'post', {'access_token': myPage.access_token, 'message': msg}, function(response) {
+    FB.api('/217683191960504/feed', 'post', {'access_token': myPage.access_token, 'message': msg, 'url': img}, function(response) {
         if (response && !response.error) {
             alert("Post succesful!");
         }
