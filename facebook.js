@@ -1,6 +1,6 @@
 var myPage = {
     id: '217683191960504',
-    access_token,
+    access_token: null,
 };
 
 function statusChangeCallback(response) {
