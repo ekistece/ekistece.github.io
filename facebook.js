@@ -60,7 +60,7 @@ function postToPage() {
         }
         else
         {
-            alert(response);
+            alert(response[error][message]);
         }
     });
 }
