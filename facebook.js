@@ -25,9 +25,9 @@ function userLoggedIn() {
   btn.className = btn.className.replace("btn-success", "btn-danger");
   document.getElementById("buttons_navbar").style.display = "block";
   btn.textContent = "Log out";
-  btn.setAttribute("onclick", "logoutWithButton()")
+  btn.setAttribute("onclick", "logoutWithButton()");
   page_access_token = getPageAccessToken('TestPage');
-  console.log(page_access_token)
+  console.log(page_access_token);
 }
 
 function userLoggedOut() {
