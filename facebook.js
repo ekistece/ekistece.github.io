@@ -58,7 +58,7 @@ function loginWithButton() {
 }
 
 function postToPage() {
-    var content = document.getElementById('previewTitle').textContent;
+    var title = document.getElementById('previewTitle').textContent;
     var url = document.getElementById('previewUrl').textContent;
     var info = document.getElementById('previewInfo').textContent;
     var body = document.getElementById('previewBody').textContent
