@@ -63,7 +63,7 @@ function postToPage() {
     var info = document.getElementById('previewInfo').textContent;
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
-    var msg = title + '\n' + url+ '\n' + info + '\n' + body + '\n' + img;
+    var msg = title + '\n' + url+ '\n' + info + '\n' + body;
     FB.api('/217683191960504/photos', 'post', {'access_token': myPage.access_token, 'caption': msg, 'url': img}, function(response) {
         if (response && !response.error) {
             alert("Post succesful!");
