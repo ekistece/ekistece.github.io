@@ -1,4 +1,7 @@
-var page_access_token;
+var myPage {
+    id: '217683191960504',
+    access_token,
+};
 
 function statusChangeCallback(response) {
     if (response.status === 'connected') {
@@ -26,8 +29,8 @@ function userLoggedIn() {
   document.getElementById("buttons_navbar").style.display = "block";
   btn.textContent = "Log out";
   btn.setAttribute("onclick", "logoutWithButton()");
-  getPageAccessToken('TestPage', function(token) {
-      page_access_token = token;
+  getPageAccessToken(myPage.id, function(token) {
+      myPage.access_token = token;
       console.log(page_access_token);
   }); 
 }
@@ -60,7 +63,7 @@ function postToPage(page_access_token) {
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
     var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/217683191960504/feed', 'post', {'access_token': page_access_token, 'message': msg}, function(response) {
+    FB.api('/217683191960504/feed', 'post', {'access_token': myPage.access_token, 'message': msg}, function(response) {
         if (response && !response.error) {
             alert("Post succesful!");
         }
@@ -71,10 +74,10 @@ function postToPage(page_access_token) {
     });
 }
 
-function getPageAccessToken(pageName, callback) {
+function getPageAccessToken(myPageId, callback) {
     FB.api('/me/accounts', function(response) {
         for (var i=0; i < response.data.length; i++) {
-            if (response.data[i].name == pageName) {
+            if (response.data[i].id == myPageId) {
                 console.log(response.data[i].access_token);
                 callback(response.data[i].access_token);
             }
