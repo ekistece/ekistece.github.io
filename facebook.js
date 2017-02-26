@@ -64,7 +64,7 @@ function postToPage(page_access_token) {
         }
         else
         {
-            alert(response[error][message]);
+            alert(response['error']['message']);
         }
     });
 }
