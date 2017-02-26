@@ -58,12 +58,13 @@ function loginWithButton() {
 }
 
 function postToPage() {
-    var title = document.getElementById('previewTitle').textContent;
+    var content = document.getElementById('previewTitle').textContent;
+    var url = document.getElementById('previewUrl').textContent;
     var info = document.getElementById('previewInfo').textContent;
     var body = document.getElementById('previewBody').textContent
     var img = document.getElementById('previewImg').src;
-    var msg = title + '\n' + info + '\n' + body + '\n' + img;
-    FB.api('/217683191960504/feed', 'post', {'access_token': myPage.access_token, 'message': msg, 'url': img}, function(response) {
+    var msg = title + '\n' + url+ '\n' + info + '\n' + body + '\n' + img;
+    FB.api('/217683191960504/feed', 'post', {'access_token': myPage.access_token, 'message': msg, 'picture': img}, function(response) {
         if (response && !response.error) {
             alert("Post succesful!");
         }
